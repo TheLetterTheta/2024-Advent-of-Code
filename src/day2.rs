@@ -1,12 +1,12 @@
 use nom::{
+    IResult,
     character::complete::{self, newline, space1},
     multi::separated_list1,
-    IResult,
 };
 
 use itertools::Itertools;
 
-type Input=Vec<Vec<i32>>;
+type Input = Vec<Vec<i32>>;
 
 fn parse_line(input: &str) -> IResult<&str, Vec<i32>> {
     separated_list1(space1, complete::i32)(input)
@@ -45,7 +45,7 @@ fn part1(input: &Input) -> usize {
 fn part2(input: &Input) -> usize {
     input
         .into_iter()
-        .filter(|line|{
+        .filter(|line| {
             for i in 0..line.len() {
                 let mut new_line = (*line).clone();
                 new_line.remove(i);
@@ -71,7 +71,7 @@ fn test_line(line: Vec<i32>) -> bool {
             sign = Some(diff.signum());
         }
         if diff.abs() > 3 {
-            return false
+            return false;
         }
     }
     true

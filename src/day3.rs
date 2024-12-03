@@ -1,10 +1,10 @@
 use itertools::Itertools;
 use nom::{
+    IResult,
     character::complete::{digit1, newline, space1},
     combinator::{map_res, opt},
     multi::fold_many1,
     sequence::{separated_pair, terminated},
-    IResult,
 };
 
 use once_cell::sync::Lazy;
