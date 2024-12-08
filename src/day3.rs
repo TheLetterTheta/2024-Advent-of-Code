@@ -1,16 +1,7 @@
-use itertools::Itertools;
-use nom::{
-    IResult,
-    character::complete::{digit1, newline, space1},
-    combinator::{map_res, opt},
-    multi::fold_many1,
-    sequence::{separated_pair, terminated},
-};
 
 use once_cell::sync::Lazy;
 use regex::Regex;
 
-use std::collections::{BinaryHeap, HashMap};
 
 #[aoc(day3, part1)]
 fn part_one(input: &str) -> u32 {

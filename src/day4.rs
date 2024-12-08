@@ -1,4 +1,3 @@
-use itertools::Itertools;
 
 #[aoc_generator(day4)]
 fn parse_input(input: &str) -> Vec<String> {
