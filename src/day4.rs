@@ -59,7 +59,7 @@ fn part_two(input: &Vec<String>) -> usize {
         .enumerate()
         .take(input.len() - 1)
         .skip(1)
-        .map(|(i, line)| 
+        .map(|(i, line)| {
             line.chars()
                 .enumerate()
                 .take(line.len() - 1)
@@ -94,6 +94,6 @@ fn part_two(input: &Vec<String>) -> usize {
                         && tr != bl
                 })
                 .count()
-        )
+        })
         .sum::<usize>()
 }
